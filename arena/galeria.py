@@ -126,7 +126,7 @@ blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--amb);back
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
 .gal .card .info{font-size:14px}.gal a{font-size:13px}
 footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--mut);font-size:14px}
-@media(max-width:720px){.podio{grid-template-columns:1fr}.hide-m{display:none}nav .sec{display:none}}
+@media(max-width:720px){.podio{grid-template-columns:1fr}.hide-m{display:none}nav .sec{display:none}nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;row-gap:4px;gap:8px;font-size:14px}nav .sp{flex-basis:100%;height:0}}
 """
 
 
