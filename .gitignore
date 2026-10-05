@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+resultados/pares/*
+!resultados/pares/claude-fable-5-1__llama3-8b.png

@@ -1,0 +1,13 @@
+{
+  "id": "gpt-6-1-sol",
+  "motor": "codex",
+  "modelo": "gpt-6.1-sol",
+  "rotulo": "GPT-6.1 Sol",
+  "familia": "OpenAI",
+  "segundos": 50.5,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 3718,
+  "data": "2026-10-05T18:05:24",
+  "renderizou": true
+}

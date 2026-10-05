@@ -1,0 +1,78 @@
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#eaf5ea"/>
+  <line x1="15" y1="362" x2="385" y2="362" stroke="#8aa87a" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Rodas -->
+  <g stroke="#333" fill="none">
+    <circle cx="100" cy="300" r="58" stroke-width="9"/>
+    <circle cx="300" cy="300" r="58" stroke-width="9"/>
+    <g stroke-width="3">
+      <line x1="100" y1="248" x2="100" y2="352"/>
+      <line x1="48" y1="300" x2="152" y2="300"/>
+      <line x1="63" y1="263" x2="137" y2="337"/>
+      <line x1="137" y1="263" x2="63" y2="337"/>
+      <line x1="300" y1="248" x2="300" y2="352"/>
+      <line x1="248" y1="300" x2="352" y2="300"/>
+      <line x1="263" y1="263" x2="337" y2="337"/>
+      <line x1="337" y1="263" x2="263" y2="337"/>
+    </g>
+  </g>
+  <circle cx="100" cy="300" r="8" fill="#333"/>
+  <circle cx="300" cy="300" r="8" fill="#333"/>
+
+  <!-- Quadro -->
+  <g stroke="#c0392b" stroke-width="8" stroke-linecap="round" fill="none">
+    <line x1="100" y1="300" x2="200" y2="300"/>
+    <line x1="200" y1="300" x2="170" y2="200"/>
+    <line x1="100" y1="300" x2="170" y2="200"/>
+    <line x1="170" y1="200" x2="300" y2="190"/>
+    <line x1="200" y1="300" x2="300" y2="190"/>
+    <line x1="300" y1="300" x2="300" y2="185"/>
+  </g>
+
+  <!-- Pedal e corrente -->
+  <circle cx="200" cy="300" r="12" fill="none" stroke="#555" stroke-width="5"/>
+  <line x1="200" y1="300" x2="185" y2="320" stroke="#555" stroke-width="6"/>
+  <rect x="172" y="316" width="26" height="7" rx="3" fill="#222"/>
+  <line x1="200" y1="300" x2="215" y2="280" stroke="#555" stroke-width="6"/>
+  <rect x="204" y="276" width="26" height="7" rx="3" fill="#222"/>
+
+  <!-- Sela e guidão -->
+  <ellipse cx="170" cy="194" rx="20" ry="7" fill="#222"/>
+  <line x1="170" y1="194" x2="170" y2="202" stroke="#555" stroke-width="5"/>
+  <path d="M300 185 q2 -18 18 -18" fill="none" stroke="#555" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="318" cy="167" r="6" fill="#222"/>
+
+  <!-- Perna traseira (sobre o pedal) -->
+  <path d="M150 190 Q165 260 185 318" fill="none" stroke="#7a4a22" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="185" cy="320" rx="14" ry="7" fill="#5c3a1a"/>
+
+  <!-- Corpo da capivara -->
+  <ellipse cx="160" cy="158" rx="62" ry="44" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="3"/>
+
+  <!-- Braço para o guidão -->
+  <path d="M218 160 Q270 150 310 172" fill="none" stroke="#7a4a22" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="310" cy="172" r="9" fill="#5c3a1a"/>
+
+  <!-- Cabeça -->
+  <path d="M205 152
+           C 202 112 235 98 262 103
+           L 288 110
+           C 300 114 301 140 290 146
+           L 264 156
+           C 244 164 214 166 205 152 Z"
+        fill="#96622f" stroke="#5c3a1a" stroke-width="3"/>
+
+  <!-- Orelha -->
+  <ellipse cx="236" cy="100" rx="9" ry="7" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="2.5"/>
+
+  <!-- Olho -->
+  <circle cx="252" cy="122" r="4.5" fill="#222"/>
+  <circle cx="253.5" cy="120.5" r="1.5" fill="#fff"/>
+
+  <!-- Narina e boca -->
+  <ellipse cx="288" cy="126" rx="4" ry="3" fill="#3a2410"/>
+  <path d="M286 142 q-10 6 -22 5" fill="none" stroke="#3a2410" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+```

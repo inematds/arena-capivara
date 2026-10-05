@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Capivara andando de bicicleta">
+  <rect width="800" height="600" fill="#f5f2e9"/>
+  <path d="M0 500H800" stroke="#b7c8a5" stroke-width="8" stroke-linecap="round"/>
+
+  <g fill="none" stroke="#35464a" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="220" cy="455" r="100" stroke-width="12"/>
+    <circle cx="590" cy="455" r="100" stroke-width="12"/>
+    <path d="M220 455 340 310 440 455 220 455m120-145 90 5 160 140-150 0m-100-145-25-35" stroke="#e47751" stroke-width="14"/>
+    <path d="M410 275h-95m250 35 25 145m-47-145h55l28 25" stroke-width="13"/>
+    <path d="M440 455h42m-42 0-26-35" stroke-width="12"/>
+  </g>
+
+  <g stroke="#9aaba6" stroke-width="3">
+    <path d="M220 355v200m-100-100h200m-171-71 142 142m0-142L149 526"/>
+    <path d="M590 355v200m-100-100h200m-171-71 142 142m0-142L519 526"/>
+  </g>
+
+  <g fill="#a96f49" stroke="#754b34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M298 245c-38-39-25-99 33-126 75-35 186 4 210 77 17 52-17 112-89 127-68 14-125-23-154-78Z" stroke-width="7"/>
+    <path d="M352 290c-6 42-13 75-22 103l-28 43 34 17 44-49 34-91" stroke-width="7"/>
+    <path d="M454 293c13 37 30 62 55 80l40 23 17-29-40-29-19-62" stroke-width="7"/>
+    <path d="M490 137c28-26 82-28 116-6 31 20 39 58 24 87-14 29-49 44-88 39l-35 1c-36 0-54-32-43-68 5-19 14-39 26-53Z" stroke-width="7"/>
+    <path d="M506 138c-9-22-7-39 5-45 14-6 27 10 30 31m29-2c-1-24 8-39 22-37 13 2 19 19 15 43" stroke-width="7"/>
+    <path d="M593 193c21-2 43 7 49 24 7 19-11 38-39 40-25 1-45-12-48-30" fill="#bd825b" stroke-width="7"/>
+  </g>
+
+  <path d="M491 236c35 18 58 37 68 76l13 22" fill="none" stroke="#a96f49" stroke-width="27" stroke-linecap="round"/>
+  <path d="M491 236c35 18 58 37 68 76l13 22" fill="none" stroke="#754b34" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="575" cy="335" rx="15" ry="11" fill="#754b34" transform="rotate(-20 575 335)"/>
+
+  <path d="M365 315c-8 35 0 63 31 82l44 27" fill="none" stroke="#a96f49" stroke-width="27" stroke-linecap="round"/>
+  <path d="M365 315c-8 35 0 63 31 82l44 27" fill="none" stroke="#754b34" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="447" cy="428" rx="17" ry="11" fill="#754b34" transform="rotate(25 447 428)"/>
+
+  <circle cx="574" cy="168" r="6" fill="#292a27"/>
+  <ellipse cx="625" cy="219" rx="10" ry="7" fill="#49372e"/>
+  <path d="M606 239q13 10 25 0" fill="none" stroke="#754b34" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="587" cy="189" r="8" fill="#d99578" opacity=".65"/>
+</svg>

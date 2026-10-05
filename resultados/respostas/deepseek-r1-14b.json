@@ -1,0 +1,13 @@
+{
+  "id": "deepseek-r1-14b",
+  "motor": "ollama",
+  "modelo": "deepseek-r1:14b",
+  "rotulo": "DeepSeek R1 14B",
+  "familia": "Local",
+  "segundos": 45.7,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 1171,
+  "data": "2026-10-05T18:24:56",
+  "renderizou": true
+}

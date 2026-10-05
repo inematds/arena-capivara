@@ -1,0 +1,13 @@
+{
+  "id": "gpt-6-luna",
+  "motor": "codex",
+  "modelo": "gpt-6-luna",
+  "rotulo": "GPT-6 Luna",
+  "familia": "OpenAI",
+  "segundos": 23.0,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 2099,
+  "data": "2026-10-05T18:03:32",
+  "renderizou": true
+}

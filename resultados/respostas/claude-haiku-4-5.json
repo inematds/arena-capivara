@@ -1,0 +1,13 @@
+{
+  "id": "claude-haiku-4-5",
+  "motor": "claude",
+  "modelo": "claude-haiku-4-5-20251001",
+  "rotulo": "Claude Haiku 4.5",
+  "familia": "Anthropic",
+  "segundos": 14.6,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 3456,
+  "data": "2026-10-05T18:03:23",
+  "renderizou": true
+}

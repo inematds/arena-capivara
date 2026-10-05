@@ -1,0 +1,13 @@
+{
+  "id": "qwen2-5-14b",
+  "motor": "ollama",
+  "modelo": "qwen2.5:14b",
+  "rotulo": "Qwen 2.5 14B",
+  "familia": "Local",
+  "segundos": 20.4,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 914,
+  "data": "2026-10-05T18:24:10",
+  "renderizou": true
+}

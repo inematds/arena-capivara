@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bike -->
+  <path d="M100 150 L200 150" fill="none" stroke="#000" stroke-width="4"/>
+  <path d="M150 150 L150 180" fill="none" stroke="#000" stroke-width="4"/>
+  <circle cx="100" cy="170" r="20" fill="none" stroke="#000" stroke-width="4"/>
+  <circle cx="200" cy="170" r="20" fill="none" stroke="#000" stroke-width="4"/>
+  <rect x="50" y="130" width="30" height="20" fill="#000"/>
+  <rect x="120" y="140" width="60" height="10" fill="#000"/>
+  <rect x="170" y="130" width="30" height="20" fill="#000"/>
+  
+  <!-- Capybara -->
+  <ellipse cx="150" cy="120" rx="30" ry="20" fill="#FFA500"/>
+  <ellipse cx="150" cy="90" rx="20" ry="15" fill="#FFA500"/>
+  <rect x="135" y="95" width="30" height="5" fill="#000"/>
+  <circle cx="140" cy="92" r="2" fill="#000"/>
+  <circle cx="160" cy="92" r="2" fill="#000"/>
+  <path d="M145 90 L140 85 L150 80 L160 85 L165 90" fill="#000"/>
+  
+  <!-- Legs -->
+  <rect x="130" y="120" width="10" height="30" fill="#FFA500"/>
+  <rect x="170" y="120" width="10" height="30" fill="#FFA500"/>
+  
+  <!-- Shadow -->
+  <rect x="140" y="145" width="20" height="10" fill="#666"/>
+</svg>

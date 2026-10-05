@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640" role="img" aria-labelledby="title desc">
+  <title id="title">Capivara andando de bicicleta</title>
+  <desc id="desc">Uma capivara sorridente pedala uma bicicleta verde, com um lenço coral ao vento.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1">
+      <stop stop-color="#fff8e9"/>
+      <stop offset="1" stop-color="#f5e8cd"/>
+    </linearGradient>
+    <linearGradient id="fur" x2=".8" y2="1">
+      <stop stop-color="#b98759"/>
+      <stop offset="1" stop-color="#92613e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="640" rx="36" fill="url(#bg)"/>
+  <circle cx="626" cy="137" r="57" fill="#f5cf79" opacity=".7"/>
+  <path d="M73 466Q210 419 360 458T736 449V640H73Z" fill="#dce2bd" opacity=".6"/>
+  <ellipse cx="399" cy="538" rx="282" ry="23" fill="#615b43" opacity=".12"/>
+
+  <g fill="none" stroke="#9aa880" stroke-width="5" stroke-linecap="round">
+    <path d="M99 525l-8-15m8 15 7-20M693 526l8-18m-8 18-6-11"/>
+    <path d="M100 330h70m-95 25h63m-32 27h43" stroke="#ccbaa0"/>
+  </g>
+
+  <!-- Roues -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <g fill="#fff9e9" stroke="#393d37" stroke-width="13">
+      <circle cx="230" cy="432" r="103"/>
+      <circle cx="581" cy="432" r="103"/>
+    </g>
+    <g fill="none" stroke="#b8b8a0" stroke-width="2.5">
+      <circle cx="230" cy="432" r="91"/>
+      <circle cx="581" cy="432" r="91"/>
+      <path d="M230 341v182m-91-91h182m-155-64 128 128m0-128L166 496"/>
+      <path d="M581 341v182m-91-91h182m-155-64 128 128m0-128L517 496"/>
+    </g>
+
+    <!-- Patte derrière le cadre -->
+    <path d="M353 291Q393 322 428 352L393 418" fill="none" stroke="#754c33" stroke-width="35"/>
+    <path d="M392 415l29 9" fill="none" stroke="#754c33" stroke-width="27"/>
+    <path d="M390 432h47" fill="none" stroke="#393d37" stroke-width="9"/>
+
+    <!-- Cadre du vélo -->
+    <g fill="none" stroke="#317e70" stroke-width="12">
+      <path d="M230 432l91-139 62 139H230l-8-7"/>
+      <path d="M321 293h204L383 432"/>
+      <path d="M514 264l67 168"/>
+    </g>
+    <path d="M321 294l-12-37" fill="none" stroke="#575d52" stroke-width="9"/>
+    <path d="M280 258h64q12 0 10 8h-76q-8-6 2-8" fill="#473f35" stroke="#473f35" stroke-width="5"/>
+    <path d="M514 267l-12-37q-5-15 10-19l35-9" fill="none" stroke="#575d52" stroke-width="9"/>
+    <path d="M535 205l21-7" fill="none" stroke="#453f35" stroke-width="13"/>
+    <path d="M547 213q36 38 16 66" fill="none" stroke="#6f7461" stroke-width="3"/>
+
+    <g fill="#e7d9b7" stroke="#575d52" stroke-width="5">
+      <circle cx="230" cy="432" r="9"/>
+      <circle cx="581" cy="432" r="9"/>
+      <circle cx="383" cy="432" r="23"/>
+    </g>
+    <path d="M383 432l-33 40" fill="none" stroke="#575d52" stroke-width="8"/>
+    <path d="M328 475h47" fill="none" stroke="#393d37" stroke-width="9"/>
+
+    <!-- Corps -->
+    <path d="M288 260Q266 204 300 158Q329 124 383 149L428 173Q446 220 407 265Q383 306 331 300Q299 296 288 260Z"
+          fill="url(#fur)" stroke="#664631" stroke-width="5"/>
+    <path d="M292 222q-9 29 7 45" fill="none" stroke="#c99b6a" stroke-width="9"/>
+    <path d="M370 187Q399 201 410 224L433 254" fill="none" stroke="#664631" stroke-width="32"/>
+    <path d="M370 186Q399 201 411 222L437 244L505 216" fill="none" stroke="#af7d50" stroke-width="24"/>
+    <path d="M499 214q16-8 22 3q3 13-14 16" fill="#af7d50" stroke="#664631" stroke-width="4"/>
+    <path d="M511 218l2 8" fill="none" stroke="#795137" stroke-width="3"/>
+
+    <!-- Lenço -->
+    <path d="M382 171Q338 155 314 116L312 143l-31-6Q308 174 365 188" fill="#dc6854" stroke="#a5493e" stroke-width="4"/>
+    <path d="M382 166l46 19-12 25-47-24Z" fill="#e97c62" stroke="#a5493e" stroke-width="4"/>
+    <path d="M375 176q-16 12-1 22q13 5 18-10" fill="#ee8b6d" stroke="#a5493e" stroke-width="4"/>
+
+    <!-- Tête et oreilles -->
+    <path d="M383 127Q364 115 369 96Q374 81 388 88Q403 96 400 113" fill="#ae7c50" stroke="#664631" stroke-width="5"/>
+    <path d="M380 106q-4-15 6-9" fill="none" stroke="#805139" stroke-width="6"/>
+    <path d="M389 114Q421 94 453 115Q473 129 480 145L517 151Q532 155 532 174L530 196Q528 213 507 216L434 214Q405 211 388 190Q374 171 379 148Z"
+          fill="#b98759" stroke="#664631" stroke-width="5"/>
+    <path d="M410 121Q395 102 409 91Q424 84 433 99L435 115" fill="#ba8b5b" stroke="#664631" stroke-width="5"/>
+    <path d="M415 109q-5-11 4-10" fill="none" stroke="#85563d" stroke-width="6"/>
+    <path d="M480 170q26-9 46 1v22q-2 15-23 15h-24" fill="#c7996b"/>
+    <ellipse cx="452" cy="148" rx="5.5" ry="7" fill="#352e27"/>
+    <circle cx="454" cy="146" r="1.7" fill="#fff9e9"/>
+    <path d="M442 133q9-5 15 0" fill="none" stroke="#795139" stroke-width="4"/>
+    <ellipse cx="520" cy="169" rx="5" ry="3.5" fill="#593e2e"/>
+    <path d="M529 191q-15 9-28-1" fill="none" stroke="#664631" stroke-width="4"/>
+    <ellipse cx="463" cy="179" rx="11" ry="7" fill="#d89879" opacity=".65"/>
+    <g stroke="#795139" stroke-width="2">
+      <path d="M490 180h1m-6 7h1m9 0h1"/>
+    </g>
+
+    <!-- Patte au premier plan -->
+    <path d="M343 271Q332 311 348 345L325 413Q317 437 338 453L356 460"
+          fill="none" stroke="#664631" stroke-width="39"/>
+    <path d="M343 271Q332 311 348 345L325 413Q317 437 338 453L356 460"
+          fill="none" stroke="#ae7d50" stroke-width="29"/>
+    <path d="M346 451l-4 10m15-7-3 10" fill="none" stroke="#795139" stroke-width="3"/>
+  </g>
+
+  <g fill="#fffdf2" opacity=".9">
+    <path d="M151 155q12-26 25 0q19-8 24 9h-66q3-13 17-9"/>
+    <path d="M574 77q10-21 22 0q17-7 21 9h-57q2-11 14-9"/>
+  </g>
+</svg>

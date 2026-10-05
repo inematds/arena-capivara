@@ -1,0 +1,13 @@
+{
+  "id": "command-r-35b",
+  "motor": "ollama",
+  "modelo": "command-r:35b",
+  "rotulo": "Command R 35B",
+  "familia": "Local",
+  "segundos": 752.4,
+  "tem_svg": false,
+  "erro": null,
+  "bytes_svg": 0,
+  "data": "2026-10-05T18:23:50",
+  "renderizou": false
+}

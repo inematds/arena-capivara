@@ -1,0 +1,20 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <title>Capivara Andando de Bicicleta</title>
+  <style>
+    .capybara { fill: brown; }
+    .bicycle { fill: none; stroke: black; stroke-width: 2; }
+  </style>
+  <g transform="translate(100,100)">
+    <!-- Capivara -->
+    <ellipse class="capybara" rx="40" ry="20" transform="rotate(-45)"/>
+    <ellipse class="capybara" rx="25" ry="15" transform="translate(60,0) rotate(-45)"/>
+    <ellipse class="capybara" rx="15" ry="10" transform="translate(60,0)"/>
+    <!-- Olhos -->
+    <circle class="capybara" cx="15" cy="-10" r="3" transform="translate(60,0)"/>
+    <circle class="capybara" cx="25" cy="-10" r="3" transform="translate(60,0)"/>
+    <!-- Bicicleta -->
+    <line class="bicycle" x1="-40" y1="0" x2="-70" y2="0"/>
+    <line class="bicycle" x1="-40" y1="0" x2="-40" y2="20"/>
+    <circle class="bicycle" cx="-40" cy="10" r="5"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "id": "qwen3-30b",
+  "motor": "ollama",
+  "modelo": "qwen3:30b",
+  "rotulo": "Qwen 3 30B",
+  "familia": "Local",
+  "segundos": 69.4,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 837,
+  "data": "2026-10-05T18:08:54",
+  "renderizou": true
+}

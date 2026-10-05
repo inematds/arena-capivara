@@ -1,0 +1,53 @@
+<svg width="300" height="200" viewBox="0 0 300 200">
+  <g transform="translate(120 100)">
+    <path fill="#8B9467" d="M-20 -10 C-20 0 0 20 20 20 C20 0 40 -20 60 -10 C60 -20 80 -30 100 -30 C100 -20 120 -10 120 0 Z" />
+  </g>
+  <g transform="translate(100 50)">
+    <circle cx="0" cy="0" r="15" fill="#8B9467" />
+    <circle cx="20" cy="0" r="5" fill="#8B9467" />
+  </g>
+  <g transform="translate(150 100)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 10 20 L 10 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 100)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 100)">
+    <text x="0" y="20" fill="#8B9467" font-size="12">CAPIVARA</text>
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <text x="0" y="20" fill="#8B9467" font-size="12">ANDA</text>
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <text x="0" y="20" fill="#8B9467" font-size="12">DE</text>
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <path fill="#8B9467" d="M-10 0 L-10 20 L 0 20 L 0 0 Z" />
+    <path fill="#8B9467" d="M-5 10 L 5 10 L 0 0 Z" />
+  </g>
+  <g transform="translate(150 150)">
+    <text x="0" y="20" fill="#8B9467" font-size="12">BICICleta</text>
+  </g>
+</svg>

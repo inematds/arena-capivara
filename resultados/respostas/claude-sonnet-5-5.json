@@ -1,0 +1,13 @@
+{
+  "id": "claude-sonnet-5-5",
+  "motor": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "rotulo": "Claude Sonnet 5.5",
+  "familia": "Anthropic",
+  "segundos": 10.9,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 2549,
+  "data": "2026-10-05T18:04:44",
+  "renderizou": true
+}

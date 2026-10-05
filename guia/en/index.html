@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capybara Arena — which AI draws the best capybara riding a bicycle?</title>
+<meta name="description" content="Open benchmark inspired by Simon Willison's pelican: 19 models (local, Claude and Codex) draw a capybara riding a bicycle in SVG and a blind judge compares them in pairs. Kit to run on your own PC.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/arena-capivara/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/arena-capivara/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/arena-capivara/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🦫</span> Capybara Arena</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">What it is</a>
+    <a class="sec" href="#rodada">Results</a>
+    <a class="sec" href="#guia">User guide</a>
+    <a class="sec" href="#metodo">Build your own</a>
+    <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/arena-capivara" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Open benchmark · local models + subscription · no paid API</span>
+      <h1>Which AI draws the best <span class="amb">capybara on a bicycle</span>?</h1>
+      <p class="lead">We asked 19 models to draw the same thing in SVG code: 10 running on a computer and 9 through Claude and ChatGPT subscriptions. A judge compared them head to head without knowing who made what. The kit is open: run it with your own models.</p>
+      <div class="cta">
+        <a class="btn" href="../../resultados/en/">See the results</a>
+        <a class="btn ghost" href="#guia">Run it on my PC</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-en.jpg" alt="Capybara Arena: AIs draw a capybara on a bicycle"></figure>
+  </div>
+</header>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">What it is</span>
+  <h2>A silly test that reveals a lot</h2>
+  <p class="sub">Simon Willison evaluates each new model by asking it to create “an SVG of a pelican riding a bicycle.” He doesn’t trust leaderboards; he prefers his own test, one he understands himself. Google already showed his pelican in a keynote, so we changed the animal.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="Same prompt, blind judge, both orders, ranking, local models, build your own" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>🦫 Difficult by design</h3><p>A text model doesn’t draw: it writes code. Bicycles are hard to recall, capybaras are hard to draw, and capybaras don’t pedal. You can immediately see who understands shape and composition.</p></div>
+    <div class="card"><h3>⚖️ Blind judge, both orders</h3><p>The judge sees only “A” and “B,” with no names. Each pair appears twice, with the sides swapped, to cancel out the tendency to prefer the left. A second judge from another company rechecks a sample.</p></div>
+    <div class="card"><h3>💻 Runs at home</h3><p>Local models run through Ollama; Claude and GPT use the <code>claude</code> and <code>codex</code> CLIs with the subscription you already pay for. No API key required.</p></div>
+  </div>
+</div></section>
+
+<section id="rodada"><div class="wrap">
+  <span class="chip">Round 1 · 05/10/2026</span>
+  <h2>The podium</h2>
+  <p class="sub">Claude Fable 5.1 won 97% of matchups. The surprise: Qwen 3.8 27B, running on a computer, came in 5th out of 18, ahead of GPT-5.5 and Claude Sonnet 5.5. Command R 35B did not produce valid SVG. The second judge (GPT-6 Luna) agreed with the first in 92% of the 64 matchups it rechecked.</p>
+  <div class="ex" style="grid-template-columns:repeat(3,1fr)">
+    <figure><img src="../assets/podio1.jpg" alt="Claude Fable 5.1" loading="lazy"><figcaption><b>1st Claude Fable 5.1</b> · 97% wins</figcaption></figure>
+    <figure><img src="../assets/podio2.jpg" alt="GPT-6.1 Sol" loading="lazy"><figcaption><b>2nd GPT-6.1 Sol</b> · 94% wins</figcaption></figure>
+    <figure><img src="../assets/podio3.jpg" alt="GPT-6 Astra" loading="lazy"><figcaption><b>3rd GPT-6 Astra</b> · 91% wins</figcaption></figure>
+  </div>
+  <div class="ex" style="margin-top:18px">
+    <figure><img src="../assets/duelo.jpg" alt="First-place model versus last-place model" loading="lazy"><figcaption>First versus last. The judge: “A shows a recognizable capybara pedaling a well-drawn bicycle in a complete scene, while B is just a collection of abstract shapes with overlaid text, with no identifiable capybara or bicycle.”</figcaption></figure>
+    <figure><img src="../assets/galeria.jpg" alt="All the drawings" loading="lazy"><figcaption>All valid drawings, from 1st to last. <a href="../../resultados/en/">Full ranking, times, and code for each SVG →</a></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">How it works</span>
+  <h2>Five scripts, one per step</h2>
+  <p class="sub">Each step saves its output to <code>resultados/</code> and skips work that is already done. You can stop and continue later.</p>
+  <div class="flow">
+    <span>prompt.txt</span><span class="arr">→</span>
+    <span>gerar.py</span><span class="arr">→</span>
+    <span>renderizar.py</span><span class="arr">→</span>
+    <span>julgar.py</span><span class="arr">→</span>
+    <span>ranking.py</span><span class="arr">→</span>
+    <span>galeria.py</span>
+  </div>
+  <div class="grid g3" style="margin-top:22px">
+    <div class="card"><h3>Generate</h3><p>Sends the same prompt to each model in <code>modelos.json</code>, saves the raw response, and extracts the <code>&lt;svg&gt;</code>. Local models run one at a time to fit in memory.</p></div>
+    <div class="card"><h3>Render and judge</h3><p>Converts SVG to PNG without fetching anything from the internet, arranges images as A|B, and asks the judge for JSON with the winner and the reason.</p></div>
+    <div class="card"><h3>Ranking and gallery</h3><p>Win rate (the most honest measure), average ELO from 200 randomized orderings, side bias, and agreement between judges. Generates the public page in PT, EN, and ES.</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Prerequisites</span>
+  <h2>What needs to be installed</h2>
+  <p class="sub">Only the first item is required. Use the engines you have; remove the others from <code>modelos.json</code>.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Python 3.10+</h3><p>With <code>cairosvg</code> (SVG to PNG) and <code>Pillow</code>.</p><pre><span class="k">pip install cairosvg pillow</span></pre></div>
+    <div class="card"><h3>Ollama (local)</h3><p>Any model you’ve already downloaded. An 8B runs on a laptop; a 70B needs around 48 GB of memory.</p><pre><span class="k">ollama pull llama3.1:8b</span>
+<span class="k">ollama list</span></pre></div>
+    <div class="card"><h3>Claude Code and/or Codex</h3><p>Optional. Log in with your subscription; the kit calls <code>claude -p</code> and <code>codex exec</code>.</p><pre><span class="k">claude --version</span>
+<span class="k">codex --version</span></pre></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">User guide · step by step</span>
+  <h2>Your arena in six commands</h2>
+  <p class="sub">Start small: two or three models. Then add more.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Download the kit</h3>
+    <p>The results from our round are included in <code>resultados/</code>. Delete the folder if you want to start from scratch.</p>
+<pre><span class="k">git clone https://github.com/inematds/arena-capivara</span>
+<span class="k">cd arena-capivara</span>
+<span class="k">rm -rf resultados && mkdir -p resultados/{svgs,respostas,png,pares}</span>  <span class="c"># optional: clean arena</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Choose your competitors</h3>
+    <p>Edit <code>arena/modelos.json</code>. Each line has a <code>motor</code> (<code>ollama</code>, <code>claude</code>, or <code>codex</code>) and the <code>modelo</code> name, just as it appears in <code>ollama list</code> or the CLI.</p>
+<pre>{"id": "llama3-1-8b", "motor": "ollama", "modelo": "llama3.1:8b",
+ "rotulo": "Llama 3.1 8B", "familia": "Local"}</pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Generate the drawings</h3>
+    <p>Claude and Codex run in parallel; local models run one at a time. If a model does not return SVG, it is recorded as “no output,” which is also a result.</p>
+<pre><span class="k">python3 arena/gerar.py</span>  <span class="c"># or --so llama3-1-8b claude-haiku-4-5</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Render and set up the matchups</h3>
+<pre><span class="k">python3 arena/renderizar.py</span>  <span class="c"># "N valid images, M matchups created"</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Call the judge (and a second judge)</h3>
+    <p>The default is Claude Sonnet 5.5. The second judge rechecks a sample so you can see how much to trust the first.</p>
+<pre><span class="k">python3 arena/julgar.py --paralelo 4</span>
+<span class="k">python3 arena/julgar.py --juiz codex --modelo gpt-6-luna --amostra 60</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>View the ranking and publish</h3>
+<pre><span class="k">python3 arena/ranking.py --tabela</span>  <span class="c"># table in terminal + resultados/ranking.json</span>
+<span class="k">python3 arena/galeria.py</span>          <span class="c"># resultados/index.html (+ en/ es/)</span>
+<span class="k">python3 -m http.server 8000</span>      <span class="c"># open http://localhost:8000/resultados/</span></pre>
+  </div></div>
+</div></section>
+
+<section id="metodo"><div class="wrap">
+  <span class="chip">Build your own benchmark</span>
+  <h2>The capybara is just an example. The method works for your own work.</h2>
+  <p class="sub">The lesson from the talk isn’t “model X draws better.” It’s this: <b>don’t outsource your model choice to a leaderboard</b>. Build a small test you understand and run it whenever a new model comes out.</p>
+  <div class="phase"><div class="tag">1</div><div class="d"><strong>Use a task from your own work</strong><span>Summarize a contract, reply to a customer, write SQL. Or pick something silly but difficult, like the capybara, that models were never trained to get right.</span></div></div>
+  <div class="phase"><div class="tag">2</div><div class="d"><strong>Use the same prompt for everyone and save it to a file</strong><span>If the prompt changes between models, you’re measuring the prompt, not the model. Here, it’s <code>arena/prompt.txt</code>.</span></div></div>
+  <div class="phase"><div class="tag">3</div><div class="d"><strong>Keep the raw response</strong><span>When the result surprises you, you’ll want to see what the model actually wrote (<code>resultados/respostas/</code>).</span></div></div>
+  <div class="phase"><div class="tag">4</div><div class="d"><strong>Compare pairs instead of assigning scores</strong><span>“A or B?” is much more consistent than “give it a score from 0 to 10,” for people and models alike.</span></div></div>
+  <div class="phase"><div class="tag">5</div><div class="d"><strong>Use a blind judge in both orders and measure bias</strong><span>Hide the names, swap the sides, and report how often the left side won. Use a second judge and report their agreement.</span></div></div>
+  <div class="phase"><div class="tag">6</div><div class="d"><strong>One round is a snapshot</strong><span>Run it again and the drawings will change. To make a serious decision, run each model 3 to 5 times.</span></div></div>
+  <div class="phase"><div class="tag">7</div><div class="d"><strong>Change the subject when it gets famous</strong><span>A test that makes the news ends up in the training data. The pelican became a capybara; the capybara will have to change too.</span></div></div>
+  <div class="card" style="margin-top:18px"><h3>Adapt it to another task</h3><p>Change the text in <code>arena/prompt.txt</code> and the judge’s question (<code>PERGUNTA</code> in <code>arena/julgar.py</code>). If the output is text instead of a drawing, skip <code>renderizar.py</code> and have the judge read both responses. To use Claude Code’s own history as a test, see <a href="https://inematds.github.io/personal-benchmark/guia/" target="_blank" rel="noopener">personal-benchmark</a>.</p></div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Upcoming rounds</span>
+  <h2>What comes next</h2>
+  <p class="sub">The arena is open. Submit your round as a pull request.</p>
+  <div class="phase"><div class="tag">Done</div><div class="d"><strong>Round 1 · 05/10/2026</strong><span>19 models, one attempt each, Claude Sonnet 5.5 judge + sample reviewed with GPT-6 Luna.</span></div></div>
+  <div class="phase"><div class="tag">Next</div><div class="d"><strong>Three attempts per model</strong><span>To separate good models from lucky drawings.</span></div></div>
+  <div class="phase"><div class="tag">Idea</div><div class="d"><strong>Community rounds</strong><span>Each person runs the benchmark on their own machine with the models they have; the ranking combines the results.</span></div></div>
+  <div class="phase"><div class="tag">Sibling</div><div class="d"><strong>Lethal Trifecta</strong><span>From the same talk: when an AI agent can leak your data. <a href="https://inematds.github.io/triade-letal/guia/en/" target="_blank" rel="noopener">View the checklist</a></span></div></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python</div><div class="pill">Ollama</div><div class="pill">Claude Code · Codex</div>
+    <p style="margin-top:18px">Capybara Arena · inspired by Simon Willison’s pelican · MIT-licensed kit ·
+      <a href="https://github.com/inematds/arena-capivara">inematds/arena-capivara</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+<script>
+  (function(){
+    var KEY='arena-capivara-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

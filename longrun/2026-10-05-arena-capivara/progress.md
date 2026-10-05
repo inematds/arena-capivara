@@ -1,0 +1,5 @@
+- [x] kit arena (gerar/renderizar/julgar/ranking/galeria) + fumaça 4 modelos
+- [~] geração 19 modelos (locais restantes)
+- [x] triade: inventario.py, CHECKLIST, EXEMPLOS, guia PT/EN/ES, READMEs, capa, banners
+- [ ] arena: julgamento completo + 2º juiz + galeria + guia + READMEs
+- [ ] publicar 2 repos + Pages + portal

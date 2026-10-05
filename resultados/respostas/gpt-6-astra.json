@@ -1,0 +1,13 @@
+{
+  "id": "gpt-6-astra",
+  "motor": "codex",
+  "modelo": "gpt-6-astra",
+  "rotulo": "GPT-6 Astra",
+  "familia": "OpenAI",
+  "segundos": 67.0,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 5632,
+  "data": "2026-10-05T18:05:51",
+  "renderizou": true
+}

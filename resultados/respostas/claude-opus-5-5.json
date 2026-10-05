@@ -1,0 +1,13 @@
+{
+  "id": "claude-opus-5-5",
+  "motor": "claude",
+  "modelo": "claude-opus-5-5",
+  "rotulo": "Claude Opus 5.5",
+  "familia": "Anthropic",
+  "segundos": 16.9,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 3195,
+  "data": "2026-10-05T18:04:50",
+  "renderizou": true
+}

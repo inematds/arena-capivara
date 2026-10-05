@@ -1,0 +1,13 @@
+{
+  "id": "qwen3-6-35b-a3b",
+  "motor": "ollama",
+  "modelo": "qwen3.6:35b-a3b",
+  "rotulo": "Qwen 3.6 35B-A3B",
+  "familia": "Local",
+  "segundos": 70.4,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 8505,
+  "data": "2026-10-05T18:07:45",
+  "renderizou": true
+}

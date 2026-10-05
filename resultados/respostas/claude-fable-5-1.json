@@ -1,0 +1,13 @@
+{
+  "id": "claude-fable-5-1",
+  "motor": "claude",
+  "modelo": "claude-fable-5-1",
+  "rotulo": "Claude Fable 5.1",
+  "familia": "Anthropic",
+  "segundos": 39.4,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 5837,
+  "data": "2026-10-05T18:05:13",
+  "renderizou": true
+}

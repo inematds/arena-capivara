@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title>Capivara andando de bicicleta</title>
+  <desc>Ilustração em SVG de uma capivara marrom pedalando uma bicicleta azul.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfefff"/>
+      <stop offset="100%" stop-color="#f7fbff"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8df8e"/>
+      <stop offset="100%" stop-color="#72bf6a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#sky)"/>
+  <rect y="450" width="900" height="150" fill="url(#grass)"/>
+  <path d="M0 475 C140 445 260 485 390 462 C540 435 690 490 900 455 L900 600 L0 600 Z" fill="#5fad5f" opacity="0.45"/>
+
+  <g fill="none" stroke="#5e7f4f" stroke-width="4" stroke-linecap="round" opacity="0.65">
+    <path d="M52 488 q18 -28 36 0"/>
+    <path d="M116 508 q18 -28 36 0"/>
+    <path d="M760 492 q18 -28 36 0"/>
+    <path d="M815 520 q18 -28 36 0"/>
+  </g>
+
+  <g transform="translate(0 8)">
+    <g stroke="#263238" stroke-width="12" fill="none">
+      <circle cx="285" cy="420" r="92"/>
+      <circle cx="615" cy="420" r="92"/>
+    </g>
+
+    <g stroke="#7b8a8b" stroke-width="5" fill="none" opacity="0.8">
+      <circle cx="285" cy="420" r="72"/>
+      <circle cx="615" cy="420" r="72"/>
+      <path d="M285 420 L360 350 L470 420 Z"/>
+      <path d="M470 420 L535 330 L615 420"/>
+      <path d="M360 350 L535 330"/>
+      <path d="M360 350 L430 300"/>
+      <path d="M535 330 L582 282"/>
+      <path d="M582 282 L642 280"/>
+    </g>
+
+    <g stroke="#1e88e5" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M285 420 L360 350 L470 420 Z"/>
+      <path d="M470 420 L535 330 L615 420"/>
+      <path d="M360 350 L535 330"/>
+      <path d="M360 350 L430 300"/>
+      <path d="M535 330 L582 282"/>
+    </g>
+
+    <g stroke="#263238" stroke-width="8" stroke-linecap="round" fill="none">
+      <path d="M430 300 h68"/>
+      <path d="M642 280 q-28 -2 -60 2"/>
+      <path d="M470 420 l-38 -52"/>
+      <path d="M470 420 l50 32"/>
+    </g>
+
+    <circle cx="470" cy="420" r="16" fill="#263238"/>
+    <circle cx="470" cy="420" r="7" fill="#ffca28"/>
+
+    <g transform="translate(0 -6)">
+      <path d="M385 286 C404 219 470 172 545 186 C602 197 643 238 646 287 C649 345 590 376 506 371 C428 366 365 342 385 286 Z" fill="#9a6a43"/>
+      <path d="M394 300 C390 258 415 223 461 205 C426 241 432 306 476 338 C435 335 405 322 394 300 Z" fill="#855735" opacity="0.35"/>
+      <ellipse cx="562" cy="218" rx="82" ry="57" fill="#a8754d"/>
+      <path d="M617 222 C654 231 671 258 662 281 C651 309 606 309 579 287 C560 271 584 214 617 222 Z" fill="#a8754d"/>
+      <ellipse cx="652" cy="259" rx="15" ry="11" fill="#5a3926"/>
+      <circle cx="591" cy="216" r="8" fill="#1f1f1f"/>
+      <circle cx="594" cy="213" r="3" fill="#ffffff"/>
+      <path d="M623 242 q12 11 27 5" fill="none" stroke="#5a3926" stroke-width="5" stroke-linecap="round"/>
+      <path d="M521 172 q18 -28 39 4" fill="#8b5c3a"/>
+      <path d="M442 195 q8 -35 41 -13" fill="#8b5c3a"/>
+    </g>
+
+    <g stroke="#7a4f33" stroke-width="18" stroke-linecap="round" fill="none">
+      <path d="M440 338 C423 360 407 378 432 368"/>
+      <path d="M522 362 C533 389 532 407 520 452"/>
+      <path d="M472 360 C453 383 445 398 432 368"/>
+      <path d="M553 346 C573 361 592 359 618 345"/>
+    </g>
+
+    <g stroke="#5f3d28" stroke-width="9" stroke-linecap="round" fill="none">
+      <path d="M520 452 L548 470"/>
+      <path d="M432 368 L397 365"/>
+      <path d="M618 345 L643 330"/>
+    </g>
+
+    <g fill="#263238">
+      <ellipse cx="548" cy="470" rx="20" ry="8" transform="rotate(21 548 470)"/>
+      <ellipse cx="397" cy="365" rx="18" ry="7" transform="rotate(-5 397 365)"/>
+    </g>
+
+    <path d="M430 300 C450 294 475 295 498 300" fill="none" stroke="#5a3926" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.35" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round">
+    <path d="M95 105 h110"/>
+    <path d="M125 130 h155"/>
+    <path d="M665 95 h95"/>
+    <path d="M630 120 h160"/>
+  </g>
+</svg>

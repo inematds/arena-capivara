@@ -1,0 +1,93 @@
+```svg
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes rodarRoda {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .roda {
+        animation: rodarRoda 2s linear infinite;
+        transform-origin: center;
+      }
+    </style>
+  </defs>
+
+  <!-- Céu -->
+  <rect width="400" height="300" fill="#87CEEB"/>
+  
+  <!-- Chão -->
+  <rect y="240" width="400" height="60" fill="#90EE90"/>
+
+  <!-- Roda traseira -->
+  <g class="roda" transform="translate(100, 220)">
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#333" stroke-width="3"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#666" stroke-width="1"/>
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#666" stroke-width="1"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#666" stroke-width="1"/>
+    <line x1="-28" y1="-28" x2="28" y2="28" stroke="#666" stroke-width="1"/>
+    <line x1="-28" y1="28" x2="28" y2="-28" stroke="#666" stroke-width="1"/>
+  </g>
+
+  <!-- Roda dianteira -->
+  <g class="roda" transform="translate(300, 220)">
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#333" stroke-width="3"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#666" stroke-width="1"/>
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#666" stroke-width="1"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#666" stroke-width="1"/>
+    <line x1="-28" y1="-28" x2="28" y2="28" stroke="#666" stroke-width="1"/>
+    <line x1="-28" y1="28" x2="28" y2="-28" stroke="#666" stroke-width="1"/>
+  </g>
+
+  <!-- Quadro da bicicleta -->
+  <line x1="100" y1="220" x2="200" y2="150" stroke="#333" stroke-width="3"/>
+  <line x1="200" y1="150" x2="300" y2="220" stroke="#333" stroke-width="3"/>
+  <line x1="100" y1="220" x2="300" y2="220" stroke="#333" stroke-width="3"/>
+  <line x1="200" y1="150" x2="200" y2="220" stroke="#333" stroke-width="3"/>
+
+  <!-- Guidão -->
+  <line x1="300" y1="220" x2="320" y2="180" stroke="#333" stroke-width="3"/>
+  <line x1="310" y1="200" x2="330" y2="200" stroke="#333" stroke-width="3"/>
+
+  <!-- Pedal -->
+  <circle cx="200" cy="220" r="8" fill="#555"/>
+  <line x1="200" y1="220" x2="215" y2="235" stroke="#555" stroke-width="2"/>
+
+  <!-- Corpo da capivara (grande e redondo) -->
+  <ellipse cx="200" cy="160" rx="60" ry="50" fill="#8B7355"/>
+
+  <!-- Pescoço -->
+  <ellipse cx="220" cy="130" rx="35" ry="40" fill="#8B7355"/>
+
+  <!-- Cabeça -->
+  <ellipse cx="230" cy="90" rx="40" ry="45" fill="#A0826D"/>
+
+  <!-- Focinho -->
+  <ellipse cx="265" cy="95" rx="25" ry="20" fill="#9B7E66"/>
+
+  <!-- Olhos -->
+  <circle cx="245" cy="75" r="5" fill="#000"/>
+  <circle cx="245" cy="75" r="2" fill="#FFF"/>
+  <circle cx="255" cy="72" r="5" fill="#000"/>
+  <circle cx="255" cy="72" r="2" fill="#FFF"/>
+
+  <!-- Narinas -->
+  <circle cx="270" cy="98" r="2" fill="#000"/>
+  <circle cx="278" cy="98" r="2" fill="#000"/>
+
+  <!-- Orelhas -->
+  <ellipse cx="215" cy="60" rx="12" ry="20" fill="#8B7355"/>
+  <ellipse cx="255" cy="55" rx="12" ry="20" fill="#8B7355"/>
+
+  <!-- Patas dianteiras -->
+  <ellipse cx="170" cy="200" rx="15" ry="30" fill="#8B7355"/>
+  <ellipse cx="185" cy="205" rx="13" ry="28" fill="#8B7355"/>
+
+  <!-- Patas traseiras -->
+  <ellipse cx="210" cy="205" rx="13" ry="28" fill="#8B7355"/>
+  <ellipse cx="225" cy="200" rx="15" ry="30" fill="#8B7355"/>
+
+  <!-- Focinho detalhe -->
+  <path d="M 270 100 Q 280 105 275 115" fill="none" stroke="#000" stroke-width="1"/>
+</svg>
+```

@@ -1,0 +1,13 @@
+{
+  "id": "gpt-5-5",
+  "motor": "codex",
+  "modelo": "gpt-5.5",
+  "rotulo": "GPT-5.5",
+  "familia": "OpenAI",
+  "segundos": 35.9,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 4257,
+  "data": "2026-10-05T18:05:49",
+  "renderizou": true
+}

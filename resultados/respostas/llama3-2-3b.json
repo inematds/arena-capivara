@@ -1,0 +1,13 @@
+{
+  "id": "llama3-2-3b",
+  "motor": "ollama",
+  "modelo": "llama3.2:latest",
+  "rotulo": "Llama 3.2 3B",
+  "familia": "Local",
+  "segundos": 7.7,
+  "tem_svg": true,
+  "erro": null,
+  "bytes_svg": 1133,
+  "data": "2026-10-05T18:03:45",
+  "renderizou": true
+}
