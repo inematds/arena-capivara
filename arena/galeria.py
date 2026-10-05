@@ -5,6 +5,7 @@ Uso: python3 arena/galeria.py
 """
 import html
 import json
+import shutil
 
 from comum import ARENA, RES
 
@@ -179,7 +180,7 @@ def pagina(lg, dados, prompt, data):
         a, b = validos[0]["id"], validos[-1]["id"]
         motivo = dados.get("duelo_motivo")
         duelo = (f"<section><h2>{t['duelo']}</h2><p class='mut'>{t['duelo_txt']}</p>"
-                 f"<div class='duelo'><img src='{pre}pares/{a}__{b}.png' alt='' loading='lazy'></div>"
+                 f"<div class='duelo'><img src='{pre}duelo.png' alt='' loading='lazy'></div>"
                  + (f"<blockquote>{html.escape(motivo)}{t['motivo_nota']}</blockquote>" if motivo else "") + "</section>")
 
     local = ""
@@ -236,6 +237,7 @@ def main():
     validos = [r for r in dados["ranking"] if r["valido"]]
     if len(validos) >= 2:
         a, b = validos[0]["id"], validos[-1]["id"]
+        shutil.copy(RES / "pares" / f"{a}__{b}.png", RES / "duelo.png")  # pares/ não vai pro git
         for linha in (RES / "julgamentos.jsonl").read_text().splitlines():
             j = json.loads(linha)
             if j["a"] == a and j["b"] == b and j.get("motivo"):
